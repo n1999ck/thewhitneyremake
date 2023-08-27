@@ -6,106 +6,177 @@
     <title>Whitney Museum of American Art</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!--I still haven't figured out Sass so this stylingis a workaround-->
+    <style>
+        .btn{
+            color:black;
+            border-color: black;
+            border-radius: 0%;
+        }
+        .btn:hover{
+            color: black;
+            background:none;
+            border-color:black;
+        }
+        .link{
+            color:black;
+        }
+        .nav-link{
+            color: black;
+        }
+        ul{
+            list-style-type: none;
+            padding:0;
+            margin:0;
+        }
+        li{
+            padding: 2px;
+        }
+        .form-control-lg{
+            border-radius: 0;
+            border-color: black;
+         }
+         .form-check-input{
+            border-radius: 0;
+            border-color: black;
+         }
+         .card {
+            border: none;
+         }
+         .card-body{
+            padding-left: 0;
+         }
+</style>
 </head>
 
 <body>
-    <header></header>
-    <nav class="nav sticky-top">
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" id="navId" role="tablist">
+    <header>
+        <div id="fullHeader" class="container p-5">
+            <div>
+                <img src="content/headertext.png" class="img-fluid w-50" alt="Whitney logo">
+                <!--The original site uses an SVG coded to shrink on scrolling here - I just used a screenshot of that-->
+                <img src="content/headerwlogo.png" class="img-fluid" alt="W logo">
+            </div>
+        </div>
+        <div id="stickyHeader" class="sticky-top container">
+            <div>
+            <strong>Whitney Museum of American Art</strong>
+            
+            <div class="float-lg-end">
+                <button type="button" class="btn btn-outline-primary mx-2">BOOK TICKETS</button>
+                <button type="button" class="btn btn-outline-primary mx-2">BECOME A MEMBER</button>
+            </div>
+            <p class="float-lg-end m-2">Open today: 10:30 am-6pm</p>
+        </div>
+        
+        </div>
+
+    </header>
+    <nav class="nav container border-bottom border-top border-black">
+        <ul class="nav" id="navId">
             <li class="nav-item">
-                <a href="/visit" class="nav-link" data-bs-toggle="tab">VISIT</a>
+                <a href="/visit" class="nav-link" >VISIT</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a href="/now" class="nav-link" data-bs-toggle="tab">WHAT'S ON</a>
+                <a href="/now" class="nav-link" >WHAT'S ON</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a href="/art" class="nav-link" data-bs-toggle="tab">ART</a>
+                <a href="/art" class="nav-link" >ART</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a href="/learn" class="nav-link" data-bs-toggle="tab">LEARN</a>
+                <a href="/learn" class="nav-link" >LEARN</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a href="/shop" class="nav-link" data-bs-toggle="tab">SHOP</a>
+                <a href="/shop" class="nav-link" >SHOP</a>
             </li>
         </ul>
         
-        <!-- Tab panes -->
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="tab1Id" role="tabpanel"></div>
-            <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
-            <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
-            <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
-            <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
-        </div>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Here it is</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>I spent about an hour messing with this modal, even though I used a template straight from Bootstrap documentation.
+                    For whatever reason, if I placed it where I wanted to, underneath the buttons of the first card in my layout, 
+                    Javascript wouldn't communicate with it at all. I figure modals and cards don't mix, but I also had issues placing it outside of the card!
+                    
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </nav>
     <main>
         <!--This section uses cards to display current/upcoming exhibitions.-->
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container border-bottom border-black">
+            <div class="row py-5">
             <div class="col-lg-7 position-sticky sticky-md-top">
-                <div class="card position-sticky sticky-md-top">
+                <div class="card position-sticky sticky-md-top my-5">
                     <img class="card-img-top" src="content/JLDHoratii.jpg" alt="Title">
-                    <div class="card-body">
+                    <div class="card-body px-0">
                         <h1 class="card-title">REVOLUTION</h1>
                         <h2 class="card-text">MAY 5, 2023 - NOV 9, 2023</h2>
                     </div>
+                    <div class="sticky-md-top">
+                        <button type="button" class="btn btn-outline-primary">BOOK TICKETS</button>
+                        <button type="button" class="btn btn-outline-primary">BECOME A MEMBER</button>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-outline-primary">BOOK TICKETS</button>
-                <button type="button" class="btn btn-outline-primary">BECOME A MEMBER</button>
                 
             </div>
+            
             <div class="col-lg-5">
-                 <div class="card">
+                 <div class="card my-5 ">
                     <img class="card-img-top" src="content/John_Constable_-_The_Vale_of_Dedham_-_Google_Art_Project.jpg" alt="Title">
-                    <div class="card-body">
+                    <div class="card-body px-0">
                         <h1 class="card-title">COUNTRYSIDE</h1>
                         <h2 class="card-text">AUG 15, 2023 - MAY 9, 2024</h2>
                     </div>
                 </div>
-                 <div class="card">
+                 <div class="card my-5 ">
                     <img class="card-img-top" src="content/Edouard_Manet_-_Olympia_-_Google_Art_ProjectFXD.jpg" alt="Title">
-                    <div class="card-body">
+                    <div class="card-body px-0">
                         <h1 class="card-title">PANTHEON</h1>
                         <h2 class="card-text">FEB 12, 2023 - AUG 30, 2023</h2>
                     </div>
                 </div>
-                 <div class="card">
+                 <div class="card my-5 ">
                     <img class="card-img-top" src="content/Cole_Thomas_The_Oxbow_(The_Connecticut_River_near_Northampton_1836).jpg" alt="Title">
-                    <div class="card-body">
+                    <div class="card-body px-0">
                         <h1 class="card-title">CATSKILLS</h1>
-                        <p class="card-text">OCT 15, 2023 - FEB 2024</p>
+                        <h2 class="card-text">OCT 15, 2023 - FEB 2024</h2>
                     </div>
                 </div> 
-                <div class="card">
+                <div class="card my-5 ">
                     <img class="card-img-top" src="content/Henri_de_Toulouse-Lautrec,_1892,_Deux_femmes_dansant_au_Moulin-Rouge,_oil_on_cardboard,_93_x_80_cm,_National_Gallery_in_Prague.jpg" alt="Title">
-                    <div class="card-body">
+                    <div class="card-body px-0">
                         <h1 class="card-title">MONTMARTRE</h1>
-                        <p class="card-text">MAY 9, 2024 - NOV 2024</p>
+                        <h2 class="card-text">MAY 9, 2024 - NOV 2024</h2>
                     </div>
                 </div>
             </div>
             </div>
         </div>
-        <hr>
-        <div class="container">
-        <div>
+        
+        <div class="container border-bottom border-black py-5">
+        <div id="diveIn">
             <div class="row">
-                <h1>DIVE INTO OUR COLLECTION</h1>
-                <p class="align-self-end">View All</p>
+                <h1 class="d-inline">DIVE INTO OUR COLLECTION</h1>
+                <p class="d-inline text-lg-end">View All</p>
             </div>
-            <div class="row row-cols-1">
-                <div class="col">
-                <div class="card">
-                    <img class="card-img-top" src="content/Joseph_Mallord_William_Turner,_The_Evening_of_the_Deluge,_c._1843,_NGA_46064.jpg" alt="Title">
-                    <div class="card-body">
-                        <strong class="card-title">J.M.W. Turner</strong><br>
-                        <em class="card-text">The Evening of the Deluge</em>
-                        <p class="card-text">1843</p>
-                    </div>
-                </div>
-            </div>
+            <div class="row row-cols-1 row-cols-lg-6">    
             <div class="col">
                 <div class="card">
                     <img class="card-img-top" src="content/Gericault_tete.jpg" alt="Title">
@@ -123,6 +194,16 @@
                         <strong class="card-title">Jean Germain Drouais</strong><br>
                         <em class="card-text">Marius at Minturnae</em>
                         <p class="card-text">1786</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="content/Joseph_Mallord_William_Turner,_The_Evening_of_the_Deluge,_c._1843,_NGA_46064.jpg" alt="Title">
+                    <div class="card-body">
+                        <strong class="card-title">J.M.W. Turner</strong><br>
+                        <em class="card-text">The Evening of the Deluge</em>
+                        <p class="card-text">1843</p>
                     </div>
                 </div>
             </div>
@@ -158,7 +239,105 @@
             </div>
             </div>
         </div>
+        
+
         </div>
+         
+        <div id="insiderGuide" class="container border-bottom border-black">
+            <div class="row row-cols-2 py-5">
+                <div class="col-lg-5">
+                    <img src="content/museumInterior.jpg" alt="The inside of a museum with quilts on display" class="img-fluid float-start">
+                </div>
+                <div class="col-lg-7">
+                    <h1>AN INSIDER'S GUIDE</h1>
+                    <p>There is so much to do and see at the Whitney, but if you’re short on time, here are a few of our favorites.</p>
+                    <button type="button" class="btn btn-outline-primary">VIEW AN EXPRESS GUIDE</button>
+                </div>
+            </div>
+        </div>
+         
+        <div class="container border-bottom border-black">
+            <div class="row py-5">
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="content/20_Northmoor_Road,_Oxford.jpeg" alt="Building">
+                    <h1>VIDEO</h1>
+                    <p>Watch our latest <a href="" class="link">video series</a> to dive deeper into art at the Whitney.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="content/Gustave_Courbet,_1857,_Le_Pont_d'Ambrussum,_huile_sur_papier_marouflé_sur_bois,_48_x_63_cm,_Musée_Fabre.jpg" alt="Painting of a bridge">
+                    <h1>PODCASTS</h1>
+                    <p>Listen to <a href="" class="link">Artists Among Us</a>, our newest mode of storytelling by which we consider the complexities and contradictions that have culminated in the United States we experience today.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="content/The_Fighting_Temeraire,_JMW_Turner,_National_Gallery.jpg" alt="Painting of a boat">
+                    <h1>ARTPORT</h1>
+                    <p>Check out art that's created specifically for the web on <a href="" class="link">artport</a> —the Whitney's gallery space for Internet and new-media art.</p>
+                </div>
+            </div>
+        </div>
+         
     </main>
-    <footer></footer>
+    <footer>
+        <div id="mainFooter" class="container border-bottom border-black">
+            <div class="row row-cols-lg6 py-5">
+            <div class="col-lg-6">
+                <h1>SIGN UP FOR<br> OUR NEWSLETTER</h1>
+                <form class="d-flex">
+                    <input type="email" class="form-control-lg w-50" name="email" id="email" placeholder="Email address">
+                    <button type="submit" class="btn btn-outline-primary d-inline">Submit</button>
+                </form>
+            <div id="socialMedia">
+                
+            </div>
+            </div>
+            
+                <div class="col">
+                    <h1>HERE <br>TO HELP</h1>
+                    <ul>
+                        <li><a href="" class="link">Contact Us</a></li>
+                        <li><a href="" class="link">FAQ</a></li>
+                        <li><a href="" class="link">Press</a></li>
+                        <li><a href="" class="link">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>GET <br>INVOLVED</h1>
+                    <ul>
+                        <li><a href="" class="link">Support Us</a></li>
+                        <li><a href="" class="link">Membership</a></li>
+                        <li><a href="" class="link">Jobs & internships</a></li>
+                        <li><a href="" class="link">Independent Study Program</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>MISSION<br>& VALUES</h1>
+                    <ul>
+                        <li><a href="" class="link">About Us</a></li>
+                        <li><a href="" class="link">Land acknowledgement</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+            
+            </div>
+            <div id="secondaryFooter" class="position-relative container">
+                <ul class="d-inline">
+                    <li class="d-inline-block"><a href="" class="link">Privacy policy</a></li>
+                    <li class="d-inline-block"><a href="" class="link">Terms & conditions</a></li>
+                    <li class="d-inline-block"><a href="" class="link">About whitney.org</a></li>
+                </ul>
+               <div class="form-check d-inline-block mx-3">
+                  <input class="form-check-input" type="checkbox" value="darkMode" id="darkMode">
+                  <label class="form-check-label" for="darkMode">
+                    Dark
+                  </label>
+                </div>
+               
+                  <pt class="float-end">© 2023 Whitney Museum of American Art</pt>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 </body>
